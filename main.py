@@ -26,7 +26,7 @@ def ajouter_categories():
      curseur.execute(sql,valeurs)
      connection.commit()
      break
-ajouter_categories()   
+#ajouter_categories()   
 def ajouter_produit():
  while True:
     print("voici les categories disponibles")
@@ -38,14 +38,11 @@ def ajouter_produit():
     
     
     
-   
-    id_categorie=input("saisir l'id de la categorie")
-    if id_categorie.isnumeric():
-       id_categorie=id_categorie
+    id_categorie=input("id: ")
+    
        
  
-    else:
-        print("saisir des elements de ype numerique pour les id")
+
       
     sql_verif="""SELECT * FROM produits where id_produit=%s"""
     curseur.execute(sql_verif,(id_categorie,))
@@ -78,7 +75,7 @@ def ajouter_produit():
     curseur.execute(sql_produit,valeurs)
     connection.commit()
     break
-#ajouter_produit()   
+ajouter_produit()   
 
 def affichage_produits():
     sql="""SELECT produits.nom_produit,produits.prix,produits.quantité_initiale,Categories.categorie_nom 
