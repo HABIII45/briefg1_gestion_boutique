@@ -123,7 +123,7 @@ def mise_a_jour():
 #mise_a_jour()
 def Rechercher_produit():
  while True:
-    id_produit=input("choisir l'id du produit à rechercher: ").capitalize()
+    id_produit=input("choisir l'id du produit à rechercher: ")
     
     sql="""SELECT produits.prix,produits.quantité_initiale,produits.nom_produit,Categories.categorie_nom 
     
@@ -135,7 +135,7 @@ def Rechercher_produit():
     for prix,quantité_initiale,nom_produit,categorie_nom in affichage:
         print(f"prix: {prix:<15} quantité_initiale: {quantité_initiale:<5} nom_produit: {nom_produit:<5} categorie_nom : {categorie_nom :<5}")
         break
-#Rechercher_produit()   
+Rechercher_produit()   
 
 
 def Supprimer_produit(): #faire un select pour savoir si l id existe ou non,utiliser try except
