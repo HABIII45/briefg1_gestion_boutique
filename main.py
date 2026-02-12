@@ -13,9 +13,10 @@ def ajouter_categories():
    while True:
      
      
-     categorie=input("saisir le nom  du produit a mettre a jour: ").strip().capitalize()
+     categorie=input("saisir le nom  de la categorie: ").strip().capitalize()
      if categorie.replace(" ", "").isalpha():
-       break  
+      print("categorie ajoutée avec succès")
+      break  
      else:
          print("type non validé ")
      
@@ -25,7 +26,7 @@ def ajouter_categories():
      curseur.execute(sql,valeurs)
      connection.commit()
      break
-#ajouter_categories()   
+ajouter_categories()   
 def ajouter_produit():
  while True:
     print("voici les categories disponibles")
@@ -89,7 +90,7 @@ def affichage_produits():
     for nom_produit,prix,quantité_initiale,categorie_nom in affichage:
         print(f"nom_produit: {nom_produit:<5}  prix: {prix:<15}  quantité_initiale: {quantité_initiale:<5}  categorie_nom : {categorie_nom :<5}")
         break
-affichage_produits()
+#affichage_produits()
 def mise_a_jour():
     
  while True:
@@ -135,7 +136,7 @@ def Rechercher_produit():
     for prix,quantité_initiale,nom_produit,categorie_nom in affichage:
         print(f"prix: {prix:<15} quantité_initiale: {quantité_initiale:<5} nom_produit: {nom_produit:<5} categorie_nom : {categorie_nom :<5}")
         break
-Rechercher_produit()   
+#Rechercher_produit()   
 
 
 def Supprimer_produit(): #faire un select pour savoir si l id existe ou non,utiliser try except
@@ -352,7 +353,7 @@ def menu_principal():
          menu_caissier()
         else:
          print("Connexion échouée ou rôle inconnu")
-#menu_principal()
+menu_principal()
 curseur.close()
 connection.close()         
     
