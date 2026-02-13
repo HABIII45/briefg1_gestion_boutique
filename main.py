@@ -16,7 +16,7 @@ def ajouter_categories():
      categorie=input("saisir le nom  de la categorie: ").strip().capitalize()
      if categorie.replace(" ", "").isalpha():
       print("categorie ajoutée avec succès")
-      break  
+      continue 
      else:
          print("type non validé ")
      
@@ -25,7 +25,7 @@ def ajouter_categories():
      valeurs=(categorie,)
      curseur.execute(sql,valeurs)
      connection.commit()
-     break
+     continue
 #ajouter_categories()   
 def ajouter_produit():
  while True:
@@ -49,7 +49,7 @@ def ajouter_produit():
     p=curseur.fetchone()
     if not p:
         print("id du categorie non trouve")
-        break
+        continue
         
     nom_produit=input("saisir le nom du produit: ").capitalize()
     if nom_produit.isalpha():
@@ -93,7 +93,7 @@ def mise_a_jour():
  while True:
     nom_produit=input("saisir le nom  du produit a mettre a jour: ").strip().capitalize()
     if nom_produit.replace(" ", "").isalpha():
-       break  
+       continue 
 
        
     else:
@@ -101,7 +101,7 @@ def mise_a_jour():
     nouvelle_qtité=input("saisir la nouvelle quantité: ").strip()
     if nouvelle_qtité.isnumeric():
        nouvelle_qtité=int(nouvelle_qtité)
-       break
+       continue
     else:
         print("quantite doit etre de type entier")
     sql = """
