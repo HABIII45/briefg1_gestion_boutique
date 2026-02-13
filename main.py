@@ -75,7 +75,7 @@ def ajouter_produit():
     curseur.execute(sql_produit,valeurs)
     connection.commit()
     break
-ajouter_produit()   
+#ajouter_produit()   
 
 def affichage_produits():
     sql="""SELECT produits.nom_produit,produits.prix,produits.quantité_initiale,Categories.categorie_nom 
@@ -176,10 +176,9 @@ def Supprimer_categorie():
     curseur.execute(sql,(identifiant,))
     connection.commit()
     
-    affichage=curseur.fetchone()
-    if affichage:
-        print(f"categorie supprimer avec sucess : {affichage}")
-        break
+   
+    print(f"categorie supprimer avec sucess :")
+    break
 #Supprimer_produit()    
 
 
